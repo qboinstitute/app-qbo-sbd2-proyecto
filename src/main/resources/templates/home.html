@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout::head">
+
+</head>
+<body>
+<nav th:replace="layout::menu"></nav>
+<h1 th:text="${nomusuario}"></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="persona :${lstpersonas}">
+      <td th:text="${persona.nombre}"></td>
+      <td th:text="${persona.apellido}"></td>
+      <td th:text="${persona.edad}"></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
