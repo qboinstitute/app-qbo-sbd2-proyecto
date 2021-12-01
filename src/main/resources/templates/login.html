@@ -25,7 +25,9 @@
 				<div class="text-center">
 					No tienes cuenta, regístrate <a th:href="@{/registrar}">aquí</a>
 				</div>
-
+				<div th:if="${visualizar}" class="alert alert-danger" role="alert">
+					<span th:text="${mensaje} ?: ''"></span>
+				</div>
 			</form>
 
 		</div>
