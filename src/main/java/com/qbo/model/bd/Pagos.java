@@ -27,7 +27,7 @@ public class Pagos {
 	@Id
 	private String ciclo;
 	@Id
-	private Integer ncuouta;
+	private Integer ncuota;
 
 	@Column(name = "monto")
 	private Double monto;

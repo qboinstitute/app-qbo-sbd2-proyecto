@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.qbo.model.Persona;
+import com.qbo.model.bd.Usuario;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,7 @@ public class LoginController {
 
 	@GetMapping("/login")
 	public String login(Model model) {
-		model.addAttribute("usuario", new LoginUsuario());
+		model.addAttribute("usuario", new Usuario());
 		return "login";
 	}
 	
