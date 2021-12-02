@@ -3,7 +3,8 @@
 <head th:replace="layout::head">
 <meta charset="UTF-8">
 </head>
-<script type="text/javascript" th:src="@{/js/jsweb/Curso/frmMantCurso.js}"></script>
+<script type="text/javascript"
+	th:src="@{/js/jsweb/Curso/frmMantCurso.js}"></script>
 <body>
 
 	<nav th:replace="layout::menu"></nav>
@@ -15,7 +16,7 @@
 			<hr />
 			<div id="mensaje"></div>
 
-			<table class="table">
+			<table id="tblcurso" class="table">
 				<thead>
 					<tr>
 						<th scope="col">Id</th>
@@ -58,11 +59,24 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
-				<div class="modal-body">...</div>
+				<div class="modal-body">
+					<div class="mb-3">
+						<label for="txtnomcurso" class="form-label">Nombre del curso </label> <input
+							type="text" class="form-control" id="txtnomcurso">
+							<span id="errornomcurso" class="text-danger"></span>
+					</div>
+					<div class="mb-3">
+						<label for="txtcredcurso" class="form-label">Crédito del curso </label> <input
+							type="text" class="form-control" id="txtcredcurso">
+							<span id="errorcredcurso" class="text-danger"></span>
+					</div>
+					<input type="hidden" id="hddidcurso" name="hddidcurso" value="0" >
+				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+						data-bs-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary"
+						id="btnregistrarcurso">Guardar</button>
 				</div>
 			</div>
 		</div>
@@ -74,15 +88,19 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Eliminar Curso</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"
 						aria-label="Close"></button>
 				</div>
-				<div class="modal-body">...</div>
+				<div class="modal-body">
+					<label id="mensajeeliminar"></label>
+					<input type="hidden" id="hddidcursoeliminar" value="0">
+				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+						data-bs-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-danger"
+						id="btneliminarcurso">Eliminar</button>
 				</div>
 			</div>
 		</div>

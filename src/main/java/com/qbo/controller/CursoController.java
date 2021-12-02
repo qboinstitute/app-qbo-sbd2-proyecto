@@ -1,5 +1,7 @@
 package com.qbo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,6 +43,13 @@ public class CursoController {
 		}
 		return new ResultadoResponse(respuesta, mensaje);
 	}
+	
+	@GetMapping("/listarCursos")
+	@ResponseBody
+	public List<Curso> listarCursos(){
+		return cursoService.listarCursos();
+	}
+	
 	
 	@DeleteMapping("/eliminarCurso")
 	@ResponseBody
